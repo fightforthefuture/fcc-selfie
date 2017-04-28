@@ -1,7 +1,7 @@
 # handle imports
 import os, time
 from flask import Flask, request, session, g, redirect, url_for, abort, \
-    render_template, flash, jsonify, Response
+    render_template, flash, jsonify, Response, send_from_directory
 from access_control_decorator import crossdomain
 from pymongo import ReadPreference
 from mongoengine import connect
@@ -42,6 +42,10 @@ def index():
     return render_template('index.html', FB_IMAGE_URL=get_facebook_image(),
                 LOAD_PHOTO='');
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 @app.route('/photo/<permalink_slug>')
 def photo(permalink_slug):
