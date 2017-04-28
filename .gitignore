@@ -1,0 +1,5 @@
+venv
+.env
+tmp/*
+*.pyc
+mongo

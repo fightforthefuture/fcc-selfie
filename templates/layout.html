@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<script src="//cdn.optimizely.com/js/2872130080.js"></script>
+<meta charset="utf-8">
+<title>Net Neutrality is not a partisan issue!</title>
+<link rel="stylesheet" type="text/css" href="/static/css/selfies.css"/>
+<link rel="icon" type="image/png" href="https://www.hello.vote/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="{{ TITLE }}"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="{{ FB_IMAGE_URL }}"/>
+<meta property="og:site_name" content="{{ TITLE }}"/>
+<meta property="fb:admins" content="612663871"/>
+<meta property="og:description" content="Get to the polls!"/>
+
+<script type="text/javascript">
+    LOAD_PHOTO = '{{ LOAD_PHOTO }}';
+    SITE_URL   = 'https://i-voted.hello.vote';
+    TWEET_TEXT = '#IVOTED Your turn: text VOTE to 384-387 or visit http://hello.vote for polling place directions & reminders!';
+    TWEET_TEXT = '#IVOTED Your turn—text VOTE to 384-387 or visit http://hello.vote for your polling location & voter selfie!'
+</script>
+
+</head>
+<body class="dark">
+
+<div id="flash"></div>
+<div id="loader" class="invisible">
+    <div class="loading">
+        <div class="dot"></div>
+        <div class="dot2"></div>
+    </div>
+</div>
+<form style="display:none;"><input type="file" id="file" accept="image/*;capture=camera"/></form>
+
+{% block content %}{% endblock %}
+
+
+<div class="overlay invisible" id="webcam_modal">
+    <div class="gutter">
+        <div class="modal">
+            <a class="close lite"></a>
+            <div class="explanation">
+                <div class="video_container">
+                    <video id="video">Video stream not available.</video>
+                    <div id="frame" {% if PAGE_TYPE == 'VOTING' %}class="voting"{% endif %}></div>
+                </div>
+                
+                <canvas id="canvas" style="display: none;"></canvas>
+                <img id="photo" style="display: none;"> 
+                <div class="example">
+                    
+                    <button id="startbutton">Take Photo</button> 
+                    <button id="use" style="display: none;">Use Photo</button> 
+                    <button id="retake" style="display: none;" class="gray">Retake Photo</button> 
+                </div>
+                <audio preload="auto" id="shutter">
+                    <source src="/static/audio/photoShutter.mp3" type="audio/mpeg"/>
+                    <source src="/static/audio/photoShutter.ogg" type="audio/ogg"/>
+                </audio> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/static/js/selfies.js"></script>
+
+
+
+
+</body>
+</html>
