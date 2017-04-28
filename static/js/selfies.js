@@ -83,7 +83,7 @@ var showModal = function(item) {
             tweet.appendChild(post);
         } else {
             var span = document.createElement('span');
-            span.textContent = 'Share your photo and @tag your friends to get them to the polls!';
+            span.textContent = 'Share your letter to the FCC and encourage your friends to do it to!';
             tweet.appendChild(span);
         }
 
