@@ -87,10 +87,10 @@ def report():
 
     filename = ("%s" % uuid.uuid4())[0:8]
 
-    with open("tmp/%s.png" % filename, 'wb') as f:
+    with open("/tmp/%s.png" % filename, 'wb') as f:
         f.write(decoded)
 
-    im      = Image.open("tmp/%s.png" % filename)
+    im      = Image.open("/tmp/%s.png" % filename)
 
     try:
         for orientation in ExifTags.TAGS.keys():
@@ -140,7 +140,7 @@ def report():
     foreground = Image.open(img_overlay_file)
     im.paste(foreground, (0, 0), foreground)
 
-    im.save("tmp/%s.png" % filename)
+    im.save("/tmp/%s.png" % filename)
 
     auth = tweepy.OAuthHandler(os.environ.get('TWITTER_API_KEY'),
             os.environ.get('TWITTER_API_SECRET'))
@@ -148,7 +148,7 @@ def report():
             os.environ.get('TWITTER_TOKEN_SECRET'))
 
     api = tweepy.API(auth)
-    r = api.update_with_media("tmp/%s.png"% filename, (u"#NetNeutrality is not "
+    r = api.update_with_media("/tmp/%s.png"%filename, (u"#NetNeutrality is not "
         u"a partisan issue. We still need Title II to stop ISPs from censoring "
         u"the Internet!"))
 
@@ -203,7 +203,7 @@ def report():
     k.key = "photos/%s.png" % photo_id
     k.delete()
     k.set_metadata('Content-Type', 'image/png')
-    k.set_contents_from_filename("tmp/%s.png" % filename)
+    k.set_contents_from_filename("/tmp/%s.png" % filename)
     k.set_acl('public-read')
     # except:
     #     return '{"error": true}'
