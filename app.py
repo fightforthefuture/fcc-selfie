@@ -139,8 +139,6 @@ def report():
     im = im.crop(crop)
 
     img_overlay_file = "images/transparent.png"
-    tweet_string = u"#HeyFCC I pay my ISP to connect me to the entire web. "
-        u"@AjitPaiFCC don\'t kill #netneutrality! HeyFCC.org"
 
     foreground = Image.open(img_overlay_file)
     im.paste(foreground, (0, 0), foreground)
@@ -153,7 +151,7 @@ def report():
             os.environ.get('TWITTER_TOKEN_SECRET'))
 
     api = tweepy.API(auth)
-    r = api.update_with_media("/tmp/%s.png"%filename, tweet_string)
+    r = api.update_with_media("/tmp/%s.png" % filename, u'#HeyFCC I pay my ISP to connect me to the entire web. @AjitPaiFCC don\'t kill #netneutrality! HeyFCC.org')
 
     item = r._json
 
