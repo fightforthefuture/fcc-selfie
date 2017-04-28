@@ -448,9 +448,6 @@ if (LOAD_PHOTO) {
     });
 }
 
-if (document.getElementById('user_agent'))
-    document.getElementById('user_agent').textContent = navigator.userAgent || navigator.vendor || window.opera;
-
 // console.log('getMobileOperatingSystem: ', getMobileOperatingSystem())
 
 /**
