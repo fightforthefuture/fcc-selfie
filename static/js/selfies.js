@@ -68,13 +68,13 @@ var showModal = function(item) {
 
         if (item.landing) {
             var span = document.createElement('span');
-            span.innerHTML = 'Get to the polls! Text <strong>VOTE</strong> to <a href="sms://384387">384-387</a> or visit <a href="https://www.hello.vote/" target="_blank">Hello.Vote</a> for polling place directions and reminders!';
+            span.textContent = 'Share your letter to the FCC and encourage your friends to do it to!';
             tweet.appendChild(span);
 
             var post = document.createElement('a');
             post.className = 'share join';
             post.href = '#';
-            post.textContent = 'I voted!';
+            post.textContent = 'Selfie';
             post.addEventListener('click', function(e) {
                 e.preventDefault();
                 close_modal();
@@ -479,7 +479,7 @@ function getMobileOperatingSystem() {
 var shareSMS = function(shareLink) {
 
     if (getMobileOperatingSystem() == 'Android')
-        window.open('sms:?body='+encodeURIComponent('I voted! '+shareLink));
+        window.open('sms:?body='+encodeURIComponent('Share your letter to the FCC and encourage your friends to do it to! '+shareLink));
     else
-        window.open('sms:&body='+encodeURIComponent('I voted! '+shareLink));
+        window.open('sms:&body='+encodeURIComponent('Share your letter to the FCC and encourage your friends to do it to! '+shareLink));
 }
