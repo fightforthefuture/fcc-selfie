@@ -212,7 +212,7 @@ def report():
     return photo.to_json()
 
 def get_facebook_image():
-    return os.environ.get('SITE_URL')+'/static/images/share_img_voter.png'
+    return os.environ.get('SITE_URL')+'/static/images/laila.jpg'
     
 if __name__ == '__main__':
     if app.config['DEBUG'] == True:
