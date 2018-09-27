@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+<script src="//cdn.optimizely.com/js/2872130080.js"></script>
+<meta charset="utf-8">
+<title>Send the FCC a message ... on your cable bill!</title>
+<link rel="stylesheet" type="text/css" href="/static/css/selfies.css"/>
+<link rel="shortcut icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta property="og:title" content="Send the FCC an angry letter ... written on your cable bill"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="{{ FB_IMAGE_URL }}"/>
+<meta property="og:site_name" content="{{ TITLE }}"/>
+<meta property="fb:admins" content="612663871"/>
+<meta property="og:description" content="Bureaucrats at the FCC want to kill net neutrality and let ISPs censor the Internet. Tell them to knock it off."/>
+
+<script type="text/javascript">
+    LOAD_PHOTO = '{{ LOAD_PHOTO }}';
+    SITE_URL   = 'https://www.heyfcc.org';
+    TWEET_TEXT = '#HeyFCC I pay my ISP to connect me to the entire web. @AjitPaiFCC don\'t kill #netneutrality! HeyFCC.org';
+</script>
+
+</head>
+<body class="dark">
+
+<div id="flash"></div>
+<div id="loader" class="invisible">
+    <div class="loading">
+        <div class="dot"></div>
+        <div class="dot2"></div>
+    </div>
+</div>
+<form style="display:none;"><input type="file" id="file" accept="image/*;capture=camera"/></form>
+
+<h1>Hey FCC!</h1>
+
+<h2>
+    The FCC is caving to lobbyists and trying to kill net neutrality. They want to let ISPs like Comcast slow down and censor websites and make all of us pay more for less Internet. So we’re sending them letters ... on our cable bills. Print your bill, remove your personal info, write a message, and snap a selfie with it. We'll deliver your message to the FCC!
+
+
+</h2>
+
+<a class="post" href="#participate"><div></div>Snap Selfie</a>
+
+<p class="disclosure">Your message to the FCC will show up <a href="https://twitter.com/OhHeyFCC" target="_blank">here.</a></p>
+
+<img src="/static/images/laila.jpg" class="example"/>
+
+<!--
+<section class="cta">
+
+    <img src="/static/images/laila.jpg" class="example"/>
+
+    <main>
+        <p>
+            <strong>
+                Net Neutrality is on the chopping block.
+            </strong>
+        </p>
+        <p>
+            The FCC's new chairman Ajit Pai — a former Verizon lobbyist — is
+            planning to strike down the Net Neutrality protections that millions of
+            Americans fought for. Without Net Neutrality, big ISPs like Comcast or
+            Time Warner cable can charge exorbitant fees for access to an Internet
+            “fast lane” or even censor web sites entirely.
+        </p>
+        <p>
+            These same ISPs are tied to mainstream media
+            conglomerates that own and control so much of what people see
+            and hear on TV, the radio, movies, and the Internet. Without
+            Net Neutrality, these companies will be free to
+            squeeze Internet media out of the picture and further control
+            America's access to information.
+            <a href="https://www.cnet.com/news/verizon-to-fcc-free-speech-trumps-net-neutrality-rules/" target="_blank">
+            They believe they have a "Free Speech" right to censor the Internet.
+            </a>
+        </p>
+
+        <p>
+            Net Neutrality has been framed as a partisan issue by globalist
+            Republican Congressmen who have received millions in donations from
+            ISPs and media companies. But in reality, Net Neutrality is essential to
+            protecting the Internet as a free market of ideas and competitive
+            enterprise.
+        </p>
+
+    </main>
+
+</section>
+-->
+
+<footer>
+    <p>A project of <a href="https://www.fightforthefuture.org" target="_blank">Fight for the Future</a>. Learn more about net neutrality and take action at <a href="https://www.battleforthenet.com" target="_blank">BattleForTheNet.com</a></p>
+    <p><a href="https://www.fightforthefuture.org/privacy" target="_blank" class="privacy">Privacy Policy</a></p>
+</footer>
+
+<div class="overlay invisible" id="webcam_modal">
+    <div class="gutter">
+        <div class="modal">
+            <a class="close lite"></a>
+            <div class="explanation">
+                <div class="video_container">
+                    <video id="video">Video stream not available.</video>
+                    <div id="frame" {% if PAGE_TYPE == 'VOTING' %}class="voting"{% endif %}></div>
+                </div>
+
+                <canvas id="canvas" style="display: none;"></canvas>
+                <img id="photo" style="display: none;">
+                <div class="example">
+
+                    <button id="startbutton">Take Photo</button>
+                    <button id="use" style="display: none;">Use Photo</button>
+                    <button id="retake" style="display: none;" class="gray">Retake Photo</button>
+                </div>
+                <audio preload="auto" id="shutter">
+                    <source src="/static/audio/photoShutter.mp3" type="audio/mpeg"/>
+                    <source src="/static/audio/photoShutter.ogg" type="audio/ogg"/>
+                </audio>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="/static/js/selfies.js"></script>
+<script src="https://www.fightforthefuture.org/js/history.js"></script>
+
+</body>
+</html>
