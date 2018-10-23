@@ -18,7 +18,7 @@ var a_post = document.querySelector('a.post');
 var showModal = function(item) {
     // console.log('photo: ', item);
     hide_modal('webcam_modal')
-    
+
     var overlay = document.createElement('div');
     overlay.className = 'overlay invisible';
 
@@ -27,7 +27,7 @@ var showModal = function(item) {
 
     var modal = document.createElement('div');
     modal.className = 'modal photo';
-    
+
     var img = document.createElement('div');
     img.className = 'photo';
     img.style.background = 'white url('+item.photo_url_s3.replace('http:', 'https:')+') center center no-repeat';
@@ -37,7 +37,7 @@ var showModal = function(item) {
     var tweet = document.createElement('div');
     if (!item.share) {
         tweet.className = 'tweet';
-    
+
         var avatar = document.createElement('a');
         avatar.className = 'avatar';
         avatar.href = item.original_url;
@@ -131,7 +131,7 @@ var showModal = function(item) {
 
 
     modal.appendChild(tweet);
-    
+
     gutter.appendChild(modal);
     overlay.appendChild(gutter);
     document.body.appendChild(overlay);
@@ -363,7 +363,7 @@ var submit_photo_data = function() {
         data: { 'img_data': photo_data_base64 },
         success: function(data){
             hide_loader();
-            
+
             data = JSON.parse(data);
             if (!data || data.error)
                 return alert('Could not save that photo. Please try again!');
@@ -379,10 +379,11 @@ var submit_photo_data = function() {
     });
 }
 var participate = function() {
-    if (getMobileOperatingSystem() == 'Android' || getMobileOperatingSystem() == 'iOS')
-        document.getElementById('file').click();
-    else
-        open_webcam_modal();
+    alert("This feature is not available because the site has been archived.")
+    // if (getMobileOperatingSystem() == 'Android' || getMobileOperatingSystem() == 'iOS')
+    //     document.getElementById('file').click();
+    // else
+    //     open_webcam_modal();
 }
 
 var postButtons = document.querySelectorAll('a.post')

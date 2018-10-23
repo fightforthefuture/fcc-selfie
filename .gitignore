@@ -3,3 +3,4 @@ venv
 tmp/*
 *.pyc
 mongo
+.DS_Store
